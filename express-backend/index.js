@@ -1,12 +1,14 @@
 const Joi = require('joi');
 const bodyParser = require('body-parser')
 const express = require('express');
-const multer = require('multer')
+const multer = require('multer');
 var upload = multer();
 const app = express();
+const cors = require('cors');
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
+app.use(cors());
 app.use(express.json());
 
 const recipes = [
